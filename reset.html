@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>
+        Just your friendly neighborhood reset page.
+    </title>
+</head>
+
+<body>
+    <h1><em>"Have you tried turning it off and on again?"</em></h1>
+    <p>Way to go, champ. You dun goofed. Luckily for you, we aren't likely to hit
+        our App Engine quota anytime soon. But if/when we do, you can rest assured
+        knowing that it was all thanks to you.</p>
+
+    <button id = "homeButton">Back to main page ¯\_(ツ)_/¯</button>
+    <script type="text/javascript" src="/_ah/channel/jsapi"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript">
+        $('#homeButton')[0].onclick = function() {
+            // stupid hacky code to get main URL
+            var mainURL = document.URL;
+            var first = document.URL.indexOf('/');
+            var second = document.URL.indexOf('/', first + 1);
+            var third = document.URL.indexOf('/', second + 1);
+            mainURL = document.URL.substring(0, third+1);
+
+            console.log(document.URL);
+            console.log(mainURL);
+
+            window.location = mainURL;
+        }
+    </script>
+</html>

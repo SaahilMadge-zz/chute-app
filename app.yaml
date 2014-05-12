@@ -1,0 +1,65 @@
+application: 'chute-sensei'
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+# - url: /DSC_1221_small.JPG
+#   static_files: DSC_1221_small.JPG
+#   upload: DSC_1221_small.JPG
+
+- url: /images/(.*\.(gif|png|jpg))
+  static_files: images/\1
+  upload: images/(.*\.(gif|png|jpg))
+
+- url: /cream_pixels/cream_pixels_@2X.png
+  static_files: cream_pixels/cream_pixels_@2X.png
+  upload: cream_pixels/cream_pixels_@2X.png
+
+- url: /congruent_pentagon/congruent_pentagon.png
+  static_files: congruent_pentagon/congruent_pentagon.png
+  upload: congruent_pentagon/congruent_pentagon.png
+
+- url: /mainpage.css
+  static_files: mainpage.css
+  upload: mainpage.css
+
+- url: /faq.css
+  static_files: faq.css
+  upload: faq.css
+
+- url: /faq
+  script: servertest.app
+
+- url: /
+  script: servertest.app
+
+- url: /jquery-cookies/jquery.cookie.js
+  static_files: jquery-cookies/jquery.cookie.js
+  upload: jquery-cookies/jquery.cookie.js
+
+- url: /squared_metal.png
+  static_files: squared_metal.png
+  upload: squared_metal.png
+
+- url: /jQuery-Knobs/js/jquery.knob.js
+  static_files: jQuery-Knobs/js/jquery.knob.js
+  upload: jQuery-Knobs/js/jquery.knob.js
+
+- url: /chute.css
+  static_files: chute.css
+  upload: chute.css
+
+- url: /.*
+  script: servertest.app
+
+libraries:
+- name: webapp2
+  version: latest
+
+- name: jinja2
+  version: latest
+
+inbound_services:
+- channel_presence

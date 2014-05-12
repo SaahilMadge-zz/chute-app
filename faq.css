@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+* {
+    padding: 0;
+    margin: 10;
+    /*  margin-top: 5;
+    margin-bottom: 5;
+    margin-left: 30;
+    margin-right: 30;*/
+    font-family: 'Roboto Condensed', 'sans-serif';
+}
+
+/*body {
+    background-image: url('/cream_pixels/cream_pixels_@2X.png');
+}*/
+
+p.normal { font-style:normal }
+p.italic { font-style:italic }
+p.oblique { font-style: oblique }
+
+body {
+    background: url(/images/subtle_carbon_@2X.png);
+    color: white;
+}
+
+.question {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.answer {
+    color: #AAAAAA;
+    font-size: 1.1rem;
+}

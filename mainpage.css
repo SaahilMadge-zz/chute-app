@@ -1,0 +1,155 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+* {
+  padding: 0;
+  margin: 0;
+/*  margin-top: 5;
+  margin-bottom: 5;
+  margin-left: 30;
+  margin-right: 30;*/
+  font-family: 'Roboto Condensed', 'sans-serif';
+}
+
+/*body {
+    background-image: url('/cream_pixels/cream_pixels_@2X.png');
+}*/
+
+p.normal { font-style:normal }
+p.italic { font-style:italic }
+p.oblique { font-style: oblique }
+
+h1 {
+    text-align: center;
+}
+
+#hero {
+    margin: 0 auto;
+    background-image: url(images/DSC_1221_small.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+    color: white;
+}
+
+#hero-text-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#hero-text {
+    margin-top: 15%;
+    height: 57%;
+}
+
+#hero-button {
+    margin-bottom: 15;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.startbutton:hover {
+    /*-webkit-transition: background linear 0.1s;*/
+    -webkit-transition: border .1s linear, color .1s linear, background-color .1s linear;
+    transition: border .1s linear, color .1s linear, background-color .1s linear;
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+#subtext {
+    text-align: center;
+}
+
+.feature {
+    font-style: italic;
+    width: 33%;
+    text-align: center;
+}
+
+#feature-wrapper {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.instruction {
+    width: 33%;
+    text-align: center;
+}
+
+.feature h2 {
+    color: #00A2E0;
+}
+
+#instruction-wrapper {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+#get-started-wrapper {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+#get-started-text {
+    margin-bottom: 25px;
+}
+
+#wrapper-wrapper {
+    min-height: 60%;
+}
+
+#faq-button {
+    margin-left: 20px;
+}
+
+.startbutton {
+    background-color: transparent;
+    border: 1px solid;
+    color: white;
+    width: 125px;
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.4;
+    border-radius: 4px;
+    padding: 10px 15px;
+    outline-color: white;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.faqbutton {
+    background-color: transparent;
+    border: 1px solid;
+    color: white;
+    width: 125px;
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.4;
+    border-radius: 4px;
+    padding: 10px 15px;
+    outline-color: white;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.faqbutton:hover {
+    -webkit-transition: border .1s linear, color .1s linear, background-color .1s linear;
+    transition: border .1s linear, color .1s linear, background-color .1s linear;
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+#get-started-buttons {
+    display: flex;
+    justify-content: center;
+}

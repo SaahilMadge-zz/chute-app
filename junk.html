@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="/_ah/channel/jsapi"></script>
+		<script src="/jquery-cookies/jquery.cookie.js"></script>
+		<script src="/jQuery-Knobs/js/jquery.knob.js"></script>
+		<link rel="stylesheet" type="text/css" href="/chute.css">
+		<link rel="stylesheet" type="text/css" href="/mainpage.css">
+
+		<title>
+			Chute
+		</title>
+	</head>
+
+	<body>
+		<!-- Info Elements -->
+		<div id = "info" class = "screen">
+			{% include "mainpage.html" %}
+		</div>
+		<script>
+
+			var showInfo = function() {
+				$('#info').css('width', '100%');
+			}
+
+			var hideInfo = function() {
+				$('#info').css('width', '0px');
+			}
+
+			var addScript = function(roomname) {
+				var script = document.createElement('script');
+				script.src = "/js/chute.js?uuid={{ uuid }}&roomname=" + roomname;
+				document.getElementsByTagName('head')[0].appendChild(script);
+			}
+
+			if (document.location.pathname.substring(0, 3) == "/c/") {
+				addScript(document.location.pathname.substring(3));
+			} else {
+				showInfo();
+				$('.startbutton').on('click', function(event) {
+					addScript("");
+					hideInfo();
+				});
+			}
+		</script>
+		<script>
+			$('.faqbutton').on('click', function(event) {
+				window.location = document.URL + 'faq';
+			});
+		</script>
+
+
+		<div id = "screenmessage" class = "screen hidden">
+			<div id = "roomfull">
+				<p>Sorry, it looks like this room is full.</p>
+				<a id = "newroom"> Click here to enter a new room</a>
+			</div>
+		</div>
+
+		<!-- Transfer Elements -->
+		<input type="file" id="files" name="file" class="hidden">
+		<div id = "transferWrapperWrapper">
+			<div id = "transferWrapper">
+				<div id = "transfer">
+					<h1 id = "pageTitle">Chute {{ roomname }}</h1>
+					<input type="text" value="0" class="dial" data-min="0" data-max="10000" data-width="268" data-height="268" data-angleArc = 361 data-skin="tron" data-thickness=".2" data-displayInput=false readOnly = true>
+					<script>
+						$(function() {
+							$(".dial").knob();
+						});
+					</script>
+					<div class = "mask">
+						<div id = "content">
+							<div id = "chuteLink" class = "slidingChunk">
+								<div class = "wrapper">
+									<div class = "text">Share this link</div>
+									<input type="text" id = "link"> </input>
+								</div>
+							</div>
+							<div id = "fileSelecting" class = "slidingChunk greenPulse">
+								<div class = "wrapper">
+									<p id="greenText">Drag and Drop <hr /> Choose a file</p>
+								</div>
+							</div>
+							<div id = "confirmFile" class = "slidingChunk">
+								<div class = "wrapper">Send File</div>
+							</div>
+							<div id = "sending" class = "slidingChunk">
+								<div class = "wrapper">Sending...</div>
+							</div>
+							<div id = "receiveFile" class = "slidingChunk">
+								<div class = "wrapper">Accept File</div>
+							</div>
+							<div id = "receiving" class = "slidingChunk">
+								<div class = "wrapper">Receiving...</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div><p id = "status">Welcome to Chute!</p></div> -->
+					<div id= "instructions"></div>
+					<!-- <div id="instructionButton">&#63;</div> -->
+					<div id="instructionButton">Show Instructions</div>
+
+					<div id = "fileInfoWrapper">
+						<div id="fileInfoEmpty"><em>CANCEL</em></div>
+						<div id = "fileInfo">
+							<p id = "filename"><span class = "static">File: </span><span class = "var"></span></p>
+							<p id = "filesize"><span class = "static">Size: </span><span class = "var"></span> kb</p>
+							<p id = "time"><span class = "static">Est Time: </span><span class = "var"></span>s</p>
+						</div>
+						<div class="fileclose" id="fileclose"><em>CANCEL</em></div>
+					</div>
+					<!-- <div id = "xButton">
+						<a class="closeX" id="closeX" onclick='$("#content").hide();'>&#10006;</a>
+						Click X to close this box
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

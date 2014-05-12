@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Frequently Asked Questions - Chute</title>
+        <link rel="stylesheet" type="text/css" href="/faq.css">
+    </head>
+    <body>
+        <h1>Frequently Asked Questions</h1>
+        <br>
+        <div class='question'>What browsers does Chute work on?</div>
+        <div class='answer'>Chute currently only works on Chrome (tested on v34+). Support for Firefox and Opera is in the works. Unfortunately, due to technical limitations with the WebRTC API, we currently do not have plans to implement Chute on Internet Explorer or Safari.</div>
+
+        <div class='question'>Why do I need cookies enabled?</div>
+        <div class='answer'>Chute uses cookies to detect dropped connections and attempt to reconnect users. Without cookies, it would be impossible to determine whether a returning user was the same one who disconnected.</div>
+
+        <div class='question'>Why can't I send a file to myself?</div>
+        <div class='answer'>We create a cookie for both the sender and the receiver, but if the sender and receiver are both the same browser then the application will be unable to create the second cookie. This causes the application to hang.</div>
+
+        <div class='question'>Is the file size really unlimited?</div>
+        <div class='answer'>Not quite. Chrome allows each application to use 10% of your total available HDD space. For example, if your hard drive has 28 GB of free space you will be able to receive a file of at most 2.8 GB.</div>
+
+        <div class='question'>Can I use Chute in incognito mode?</div>
+        <div class='answer'>Sort of. Because of security issues, Chrome does not allow applications to store local data in private browsing mode, which is necessary for receiving files. You can, however, send files from incognito mode.</div>
+
+        <div class='question'>Are there any legal issues with using Chute?</div>
+        <div class='answer'>Chute is meant for sending files that can legally be transferred. Sending a file on Chute is no functionally different than sending a file over email, except that Chute does not host the data transferred between two users. All users are subject to the same copyright laws and regulations that govern the sharing of all data over the Internet. Failure to adhere to these laws may result in legal action.</div>
+    </body>
+</html>
